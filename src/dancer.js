@@ -20,18 +20,15 @@ makeDancer.prototype.step = function() {
     fn.call(obj);
     console.log('hello');
   }, this.timeBetweenSteps);
-} 
+};
 
 makeDancer.prototype.setPosition = function(top, left) {
-    // Use css top and left properties to position our <span> tag
-    // where it belongs on the page. See http://api.jquery.com/css/
-    //
-    var styleSettings = {
-      top: top,
-      left: left
-    };
-    this.$node.css(styleSettings);
+  // Use css top and left properties to position our <span> tag
+  // where it belongs on the page. See http://api.jquery.com/css/
+  //
+  var styleSettings = {
+    top: top,
+    left: left
   };
-
-
-var dancer = new makeDancer(1,1, 1000);
+  this.$node.css(styleSettings);
+};
