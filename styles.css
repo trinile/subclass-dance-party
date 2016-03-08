@@ -46,11 +46,59 @@ body, a:link, a:visited, a:active{
 }
 
 .electricSlide {
-    -webkit-transform: translate(3em,0);
-    -moz-transform: translate(3em,0);
-    -o-transform: translate(3em,0);
-    -ms-transform: translate(3em,0);
-    transform: translate(3em,0);
+  animation: slide-left 3s ease-in-out both alternate infinite,
+  slide-right 3s linear both alternate infinite;
+}
 
+/*  animation-name: slide;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;*/
+
+.sway {
+  animation: sway-left 3s linear both alternate infinite,
+  sway-right 3s linear both alternate infinite;
+}
+
+.twirl {
+ animation: spin-left .5s ease-in both alternate infinite,
+ spin-right .5s ease-in both alternate infinite;
+}
+
+@keyframes slide-left {
+  /*0%{transition: transform: translateX(0);}
+  /*20% {transform: translateX(200px);}
+  /*35% {transform: translateX(0);}
+  /*90% {transform: translateX(980px);}*/
+  /*100% {transform: translateX(900px);}*/
+  from {transform: translateX(0px);}
+  to {transform: translateX(-200px);}
+}
+
+@keyframes slide-right {
+  from {transform: translateX(-200px);}
+  to {transform: translateX(200px);}
+}
+
+@keyframes sway-left {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(-30deg);}
+}
+
+@keyframes sway-right {
+  from {transform: rotate(-30deg);}
+  to {transform: rotate(30deg);}
+}
+
+@keyframes spin-left {
+  from {transform: scaleX(0);}
+  to {transform: scaleX(-1);}
+}
+
+@keyframes spin-right {
+  from {transform: scaleX(-1);}
+  to {transform: scaleX(0)}
 }
 
