@@ -18,7 +18,6 @@ makeDancer.prototype.step = function() {
   var fn = this.step;
   setTimeout(function() {
     fn.call(obj);
-    console.log('hello');
   }, this.timeBetweenSteps);
 };
 
@@ -31,4 +30,21 @@ makeDancer.prototype.setPosition = function(top, left) {
     left: left
   };
   this.$node.css(styleSettings);
+};
+
+makeDancer.prototype.electricSlide = function() {
+  this.$node.slideToggle("slow");
+  //this.$node.addClass('electricSlide');
+};
+
+makeDancer.prototype.sway = function() {
+
+};
+
+makeDancer.prototype.twirl = function() {
+
+};
+
+makeDancer.prototype.specialMove = function() {
+
 };

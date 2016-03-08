@@ -3,6 +3,9 @@ body, html{
 }
 body{
   margin: 0px;
+  background-image: url('background.jpg');
+  background-repeat: repeat-x;
+  background-size: contain;
   background-color:#444;
   font-size: 18px;
 }
@@ -21,7 +24,33 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
-  position:absolute;
+  /*border:10px solid red;*/
+  /*border-radius:10px;*/
+  position:absolute;  
 }
+
+.trini {
+  content: url('lana.gif');
+  height: 300px;
+  width: 150px;
+  -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+}
+
+.dave {
+  content: url('carlton.gif');
+  height: 300px;
+  width: 150px;
+}
+
+.electricSlide {
+    -webkit-transform: translate(3em,0);
+    -moz-transform: translate(3em,0);
+    -o-transform: translate(3em,0);
+    -ms-transform: translate(3em,0);
+    transform: translate(3em,0);
+
+}
+
