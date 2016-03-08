@@ -10,7 +10,10 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   this.step();
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
   // this one sets the position to some random default point within the body
+  this.movesArr = [];
   this.setPosition(top, left);
+  this.specialMove();
+  this.myMoves();
 };
 
 makeDancer.prototype.step = function() {
@@ -33,18 +36,38 @@ makeDancer.prototype.setPosition = function(top, left) {
 };
 
 makeDancer.prototype.electricSlide = function() {
-  this.$node.slideToggle("slow");
-  //this.$node.addClass('electricSlide');
+  this.$node.addClass('electricSlide');
+  this.movesArr.push('electricSlide');
 };
 
 makeDancer.prototype.sway = function() {
-
+  this.$node.addClass('sway');
+  this.movesArr.push('sway');
 };
 
 makeDancer.prototype.twirl = function() {
+  this.$node.addClass('twirl');
+  this.movesArr.push('twirl');
+};
+
+// Unique move for the dancer
+makeDancer.prototype.specialMove = function() {
 
 };
 
-makeDancer.prototype.specialMove = function() {
+// List of moves the dancer will perform
+makeDancer.prototype.myMoves = function() {
 
+};
+
+// Remove the current moves applied to the dancer's class from the dancer
+makeDancer.prototype.removeMoves = function() {
+  this.movesArr.forEach(function(item) {
+    this.$node.removeClass(item);
+  });
+};
+
+// Line up dancer to the same position on the dance floor
+makeDancer.prototype.lineUp = function() {
+  //
 };
