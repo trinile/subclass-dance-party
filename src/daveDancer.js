@@ -24,3 +24,31 @@ makeDaveDancer.prototype.myMoves = function() {
   //this.sway();
 };
 
+// Line david up very quickly
+makeDaveDancer.prototype.lineUp = function(newTopPosition, newLeftPosition) {
+  this.$node.animate({
+    top: newTopPosition + "px",
+    left: newLeftPosition + 'px'
+  });
+  // // var elem = document.getElementsByClassName('dave');
+  // var elem = this;
+  // var top = elem.style.top;
+  // var left = elem.style.left;
+
+  // var id = setInterval(frame, 5);
+
+  // var frame = function () {
+  //   if (top === newTopPosition && left === newLeftPosition) {
+  //     clearInterval(id);
+  //   } else {
+  //     if (top !== newTopPosition) {
+  //       top++;
+  //       elem.style.top = top + 'px'; 
+  //     }
+  //     if (left !== newLeftPosition) {
+  //       left++;
+  //       elem.style.left = left + 'px'; 
+  //     }
+  //   }
+  // };
+};

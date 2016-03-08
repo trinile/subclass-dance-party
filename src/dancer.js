@@ -68,6 +68,6 @@ makeDancer.prototype.removeMoves = function() {
 };
 
 // Line up dancer to the same position on the dance floor
-makeDancer.prototype.lineUp = function() {
+makeDancer.prototype.lineUp = function(newTopPosition, newLeftPosition) {
   //
 };

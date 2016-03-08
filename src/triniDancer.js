@@ -1,7 +1,7 @@
 var makeTriniDancer = function(top, left, timeBetweenSteps) {
-  var height = $("body").height() / 2;
-  var width = $("body").width() / 3;
-  makeDancer.call(this, height, width, timeBetweenSteps);
+  var height = 550;
+  // var width = $("body").width() / 3;
+  makeDancer.call(this, height, left, timeBetweenSteps);
   this.$node.addClass('trini');
     // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
@@ -51,6 +51,7 @@ makeTriniDancer.prototype.specialMove = function() {
   });
 
 };
+
 makeTriniDancer.prototype.myMoves = function() {
   // this.electricSlide();
 
@@ -58,4 +59,9 @@ makeTriniDancer.prototype.myMoves = function() {
   // this.sway();
 };
 
-
+// 
+makeTriniDancer.prototype.lineUp = function(newTopPosition, newLeftPosition) {
+  this.$node.animate({
+    top: newTopPosition + 'px',
+    left: newLeftPosition + 'px'});  
+};

@@ -24,25 +24,26 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  /*border:10px solid red;*/
-  /*border-radius:10px;*/
-  position:absolute;  
-}
-
-.trini {
-  content: url('lana.gif');
+  border:10px solid red;
+  border-radius:10px;
+  position:absolute;
   height: 300px;
   width: 150px;
-  -webkit-transition: 1s ease-in-out;
+}
+
+.blinkyDancer {
+  content: url('chickenDancer.gif');
+}
+.trini {
+  content: url('lana.gif');
+/*  -webkit-transition: 1s ease-in-out;
     -moz-transition: 1s ease-in-out;
     -o-transition: 1s ease-in-out;
-    transition: 1s ease-in-out;
+    transition: 1s ease-in-out;*/
 }
 
 .dave {
   content: url('carlton.gif');
-  height: 300px;
-  width: 150px;
 }
 
 .electricSlide {
@@ -64,7 +65,7 @@ body, a:link, a:visited, a:active{
 
 .twirl {
  animation: spin-left .5s ease-in both alternate infinite,
- spin-right .5s ease-in both alternate infinite;
+ spin-right s ease-in both alternate infinite;
 }
 
 @keyframes slide-left {
