@@ -84,6 +84,7 @@ makeDancer.prototype.lineUp = function(newTopPosition, newLeftPosition) {
 makeDancer.prototype.getPartner = function(partner) {
   var newTopPosition = this.$node.position().top + 'px'; 
   var newLeftPosition = this.$node.position().left + 50 + 'px';
+  var oldPosition = partner.$node.position();
   //call animate on partner with current dancer's dancer with offset to right
   partner.$node.animate({
     top: newTopPosition,
@@ -96,8 +97,19 @@ makeDancer.prototype.getPartner = function(partner) {
   this.couple();
   partner.couple();
 
-  setTimeOut(function() {
-
+  //after 5 seconds of couple dancing, partner returns to old position
+  //both resume old moves
+  var that = this;
+  setTimeout(function() {
+    partner.$node.animate({
+      top: oldPosition.top + 'px',
+      left: oldPosition.left + 'px'
+    });
+    //remove couple moves and return to old moves
+    that.removeMoves();
+    that.myMoves();
+    partner.removeMoves();
+    partner.myMoves();
   }, 5000);
 };
 

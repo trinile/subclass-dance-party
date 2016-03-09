@@ -74,7 +74,7 @@ body, a:link, a:visited, a:active{
 
 .twirl {
  animation: spin-left .5s ease-in both alternate infinite,
- spin-right s ease-in both alternate infinite;
+ spin-right .5s ease-in both alternate infinite;
 }
 
 @keyframes slide-left {

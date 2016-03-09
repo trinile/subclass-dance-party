@@ -53,7 +53,7 @@ makeTriniDancer.prototype.specialMove = function() {
 };
 
 makeTriniDancer.prototype.myMoves = function() {
-  // this.electricSlide();
+  this.electricSlide();
 
   // this.removeMoves();
   // this.sway();
