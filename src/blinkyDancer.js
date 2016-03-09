@@ -22,7 +22,22 @@ makeBlinkyDancer.prototype.step = function() {
 
 makeBlinkyDancer.prototype.lineUp = function(newTopPosition, newLeftPosition) {
   this.$node.animate({
-    top: newTopPosition + "px",
+    top: newTopPosition + 'px',
     left: newLeftPosition + 'px'
+  });
+};
+
+makeBlinkyDancer.prototype.lineUp = function() {
+  this.sway();
+};
+//special move for blinkDancer stops upon click if you can catch him
+makeBlinkyDancer.prototype.specialMove = function() {
+  var that = this;
+  this.$node.on('click', function() {
+    that.step = function() {
+      makeDancer.prototype.step.call(that);
+      //stop toggling of blinky Dancer
+      that.$node.show();
+    };
   });
 };

@@ -12,8 +12,8 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   // this one sets the position to some random default point within the body
   this.movesArr = [];
   this.setPosition(top, left);
-  this.specialMove();
   this.myMoves();
+  this.specialMove();
 };
 
 makeDancer.prototype.step = function() {
@@ -36,34 +36,40 @@ makeDancer.prototype.setPosition = function(top, left) {
 };
 
 makeDancer.prototype.electricSlide = function() {
+  this.removeMoves();
   this.$node.addClass('electricSlide');
   this.movesArr.push('electricSlide');
 };
 
 makeDancer.prototype.sway = function() {
+  this.removeMoves();
   this.$node.addClass('sway');
   this.movesArr.push('sway');
 };
 
 makeDancer.prototype.twirl = function() {
+  this.removeMoves();
   this.$node.addClass('twirl');
   this.movesArr.push('twirl');
 };
 
 //couple dance animation
 makeDancer.prototype.couple = function() {
+  this.removeMoves();
   this.$node.addClass('couple');
   this.movesArr.push('couple');
 };
 
 // Unique move for the dancer
 makeDancer.prototype.specialMove = function() {
-
+  var that = this;
+  $(that.$node).click(function() {
+    $(that.$node).rotate();
+  }).click();
 };
 
 // List of moves the dancer will perform
 makeDancer.prototype.myMoves = function() {
-
 };
 
 // Remove the current moves applied to the dancer's class from the dancer
@@ -110,7 +116,7 @@ makeDancer.prototype.getPartner = function(partner) {
     that.myMoves();
     partner.removeMoves();
     partner.myMoves();
-  }, 5000);
+  }, 8000);
 };
 
 

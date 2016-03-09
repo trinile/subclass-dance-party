@@ -21,21 +21,25 @@ makeTriniDancer.prototype.step = function() {
 
 makeTriniDancer.prototype.specialMove = function() {
   var that = this;
-  $(that.$node).click(function() {
-    that.removeMoves();
-    $(that.$node)
-      .css({ position: 'relative', left: 100 })
-      .rotate({ count: 2, easing: 'ease-in', animate: { left: 120 } })
-      .fadeTo(400, 0.1)
-      .fadeTo(300, 1)
-      .delay(200)
-      .rotate({ endDeg: -360, count: 1, easing: 'ease-out', animate: { left: 0 } });
+  $(that.$node).on('click', function(event) {
+    {
+      that.removeMoves();
+      $(that.$node)
+        .css({ position: 'relative', left: 100 })
+        .rotate({ count: 2, easing: 'ease-in', animate: { left: 120 } })
+        .fadeTo(400, 0.1)
+        .fadeTo(300, 1)
+        .delay(200)
+        .rotate({ endDeg: -360, count: 1, easing: 'ease-out', animate: { left: 0 } });
+    }
   });
-
+  setTimeout(function() {
+    that.myMoves();
+  }, 8000);
 };
 
 makeTriniDancer.prototype.myMoves = function() {
-  this.electricSlide();
+    this.electricSlide();
 };
 
 // 
@@ -44,3 +48,5 @@ makeTriniDancer.prototype.lineUp = function(newTopPosition, newLeftPosition) {
     top: newTopPosition + 'px',
     left: newLeftPosition + 'px'});  
 };
+
+
