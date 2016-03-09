@@ -50,6 +50,12 @@ makeDancer.prototype.twirl = function() {
   this.movesArr.push('twirl');
 };
 
+//couple dance animation
+makeDancer.prototype.couple = function() {
+  this.$node.addClass('couple');
+  this.movesArr.push('couple');
+};
+
 // Unique move for the dancer
 makeDancer.prototype.specialMove = function() {
 
@@ -62,12 +68,46 @@ makeDancer.prototype.myMoves = function() {
 
 // Remove the current moves applied to the dancer's class from the dancer
 makeDancer.prototype.removeMoves = function() {
-  this.movesArr.forEach(function(item) {
-    this.$node.removeClass(item);
+  var that = this;
+  this.movesArr.forEach(function(item, index) {
+    that.$node.removeClass(item);
   });
+  this.movesArr = [];
 };
 
 // Line up dancer to the same position on the dance floor
 makeDancer.prototype.lineUp = function(newTopPosition, newLeftPosition) {
   //
 };
+
+// animates partner to move to current dancer and set animation for dancing together
+makeDancer.prototype.getPartner = function(partner) {
+  var newTopPosition = this.$node.position().top + 'px'; 
+  var newLeftPosition = this.$node.position().left + 50 + 'px';
+  //call animate on partner with current dancer's dancer with offset to right
+  partner.$node.animate({
+    top: newTopPosition,
+    left: newLeftPosition
+  });
+  //remove moves 
+  this.removeMoves();
+  partner.removeMoves();
+  //add partner moves 
+  this.couple();
+  partner.couple();
+
+  setTimeOut(function() {
+
+  }, 5000);
+};
+
+
+
+
+
+
+
+
+
+
+
