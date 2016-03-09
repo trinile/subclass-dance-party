@@ -58,7 +58,7 @@ $(document).ready(function() {
           }
         }
       }); 
-      if (closestDancer !== null) {
+      if (closestDancer.dancer !== null) {
         dancer.getPartner(closestDancer.dancer);
       }
     });

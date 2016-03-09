@@ -17,46 +17,25 @@ makeTriniDancer.prototype.step = function() {
   // toggle() is a jQuery method to show/hide the <span> tag.
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
-  // var text = '+=' + this.left + 100 + 'px';
-  // this.$node.animate({
-  //       left: '+=100px',
-  // //       // height: '+=150px',
-  // //       // width: '+=150px'
-  //   }, 10000);
-
-  //  this.$node.animate({
-  //       left: '-=100px',
-  // //       // height: '+=150px',
-  // //       // width: '+=150px'
-  //   }, "slow");
-  //  var obj = this;
-   // var fn = this.specialMove
-  
-  // setTimeout(function() {
-  //   fn.call(obj);
-  // }, 5000);
 };
 
 makeTriniDancer.prototype.specialMove = function() {
-  var obj = this;
-    $(obj.$node).click(function() {
-      obj.removeMoves();
-    $(this)
-      .css({ position:'relative', left:0 })
-      .rotate({ count:2, easing:'ease-in', animate:{ left:120 } })
+  var that = this;
+  $(that.$node).click(function() {
+    that.removeMoves();
+    $(that.$node)
+      .css({ position: 'relative', left: 100 })
+      .rotate({ count: 2, easing: 'ease-in', animate: { left: 120 } })
       .fadeTo(400, 0.1)
       .fadeTo(300, 1)
       .delay(200)
-      .rotate({ endDeg:-360, count:2, easing:'ease-out', animate:{ left:0 } });
+      .rotate({ endDeg: -360, count: 1, easing: 'ease-out', animate: { left: 0 } });
   });
 
 };
 
 makeTriniDancer.prototype.myMoves = function() {
   this.electricSlide();
-
-  // this.removeMoves();
-  // this.sway();
 };
 
 // 

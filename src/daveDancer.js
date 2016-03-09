@@ -3,6 +3,7 @@ var makeDaveDancer = function(top, left, timeBetweenSteps) {
   this.$node.addClass('dave');
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
+  this.specialMoves();
 };
 
 makeDaveDancer.prototype = Object.create(makeDancer.prototype);
@@ -51,4 +52,13 @@ makeDaveDancer.prototype.lineUp = function(newTopPosition, newLeftPosition) {
   //     }
   //   }
   // };
+};
+
+makeDaveDancer.prototype.specialMoves = function() {
+    var that = this;
+    $(that.$node).click(function() {
+    that.removeMoves();
+    $(that.$node).rotate({ count:4, duration:0.6, easing:'ease-out' });
+  });
+
 };

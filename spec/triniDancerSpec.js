@@ -12,10 +12,9 @@ describe('triniDancer', function() {
     expect(triniDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should have a step function that makes its node blink', function() {
-    sinon.spy(triniDancer.$node, 'toggle');
-    triniDancer.step();
-    expect(triniDancer.$node.toggle.called).to.be.true;
+  it('should initialize height for each instance', function() {
+    var triniDancer2 = new makeTriniDancer(100, 200, timeBetweenSteps);
+    expect(triniDancer.top).to.be.equal(triniDancer2.top);
   });
 
   describe('dance', function() {
@@ -29,6 +28,10 @@ describe('triniDancer', function() {
 
       clock.tick(timeBetweenSteps);
       expect(triniDancer.step.callCount).to.be.equal(2);
+    });
+
+    it('should call my moves and add the electric slide to span', function () {
+      expect(triniDancer.movesArr.indexOf('electricSlide')).to.not.be.equal(-1);
     });
   });
 });

@@ -12,12 +12,6 @@ describe('daveDancer', function() {
     expect(daveDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should have a step function that makes its node blink', function() {
-    sinon.spy(daveDancer.$node, 'toggle');
-    daveDancer.step();
-    expect(daveDancer.$node.toggle.called).to.be.true;
-  });
-
   describe('dance', function() {
     it('should call step at least once per second', function() {
       sinon.spy(daveDancer, 'step');
@@ -29,6 +23,10 @@ describe('daveDancer', function() {
 
       clock.tick(timeBetweenSteps);
       expect(daveDancer.step.callCount).to.be.equal(2);
+    });
+
+    it('should call my moves and add the twirl to span', function () {
+      expect(daveDancer.movesArr.indexOf('twirl')).to.not.be.equal(-1);
     });
   });
 });
